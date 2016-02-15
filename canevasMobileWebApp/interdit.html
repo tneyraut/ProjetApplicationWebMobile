@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Jeu de Taquin</title>
+
+        <link rel="stylesheet" href="support/webmobile7.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/myStyle.css" />
+
+        <script src="support/jquery-2.1.1.min.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="support/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+      
+        
+        <script type="text/javascript">
+            $(document).on('pagecreate', function () {
+                var tab = [
+                    "Entrée interdite !",
+                    "Vous n'avez pas accès à cette zone",
+                    "Veuillez entrer vos identifiants dans le formulaire.",
+                    "Hum... où ai-je mis ce formulaire...",
+                    "Bon... Je ne le retrouve plus.",
+                    "Du coup je ne sais pas quoi faire...",
+                    "Vous avez une idée ?",
+                    "Ah ben nan sans formulaire vous ne pouvez pas réponde...",
+                    "Bon ben je ne peux pas vous laisser passer",
+                    "La sécurité tout ça vous comprenez...",
+                    "Bon pour vous faire patienter en attendant un technicien : une petite blague !",
+                    "Après ipod, isight, iphone, imac,",
+                    "Steve Jobs nous présente la dernière technologie d'apple : le téléchargement légal sous mac...",
+                    "Le ilégal.",
+                    "Bon ok elle était pas terrible. Une autre alors !",
+                    "Trois tomates se baladent dans la rue.",
+                    "Papa tomate, maman tomate, bébé tomate.",
+                    "Bébé tomate traine, regarde les belles nanas.",
+                    "Papa tomate se met en rage, lui balance un claque et lui dit :",
+                    "Qu'est-ce que t'as t'es tout rouge ?",
+                    "Comment ça c'est encore plus nul que l'autre blague...",
+                    "Bon le technicien n'est toujours pas arrivé...",
+                    "Je sais ! Ca vient peut-être de votre navigateur.",
+                    "Vous devez utiliser Internet Explorer !",
+                    "C'est le meilleur navigateur du marché."
+                ];
+            
+                $.each(tab, function(i, val) {
+                   alert(val);
+                });
+            });
+    
+        </script>
+        
+    </head>
+    <body>
+        
+        <section data-role="page" id="pageConfiguration">
+            <div data-role="header" data-position="fixed">
+                <h1>Sens interdit</h1>
+            </div>
+
+            <div data-role="content">
+                <p  style="text-align: center;"><strong>En effet cette page ne sert à rien.</strong></p>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Jeu de Taquin</title>
+
+        <link rel="stylesheet" href="support/webmobile7.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/myStyle.css" />
+
+        <script src="support/jquery-2.1.1.min.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="support/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/flikrAPI.js"></script>
+        
+        <style type="text/css">
+            table
+            {
+                border-collapse: collapse;
+                margin: auto;
+            }
+            
+            td
+            {
+                border: 1px solid black;
+                width: 100px;
+                height: 100px;
+                background: no-repeat;
+            }
+        </style>
+        
+        <script type="text/javascript">
+            //Définition plateau de jeu
+            var nbLigneColonne = 4;
+            var minimumSize;
+            var sizeCase;
+            var tableauCase = new Array();
+            var imageURL;
+                
+            $(document).on('pagecreate', function() {
+                
+                function createGrid() {
+                    $('#tableauJS').empty();
+                    
+                    nbLigneColonne = parseInt($('#ligneColonne').val());
+                    
+                    for(var i=0; i < nbLigneColonne; i++) {
+                        $('#tableauJS').append('<tr></tr>');
+                        
+                        for(var j=0; j < nbLigneColonne; j++) {
+                            $('#tableauJS tr:last-child').append('<td id="'+j+'-'+i+'"></td>');
+                        }
+                    }
+                    
+                    minimumSize = Math.min(width, height);
+                    sizeCase = minimumSize / nbLigneColonne;
+                    
+                    $('td').css('width',sizeCase+"px");
+                    $('td').css('height',sizeCase+"px");
+                }
+                
+                function setImage(json) {
+                    images = json.photos.photo;
+                    var indice = Math.floor(Math.random() * 10 + 1);
+                    imageURL = getImageURL(images[indice]);
+
+                    $('#tableauJS td').css('background', 'url("'+imageURL+'")');
+                    $('#tableauJS td').css('background-size', minimumSize+"px "+minimumSize + "px");
+                }
+                
+                function buildModel() {
+                    for(var i=0; i < nbLigneColonne; i++) {
+                        tableauCase[i] = new Array();
+                        for(var j=0; j < nbLigneColonne; j++) {
+                            var backgroundPosition = (-j * sizeCase) + "px " + (-i * sizeCase) + "px";
+                            var img = {xReel: j, yReel: i, background: backgroundPosition};
+
+                            tableauCase[i][j] = img;
+                        }
+                    }
+                }
+                
+                function randomIntFromInterval(min, max)
+                {
+                    return Math.floor(Math.random()*(max-min+1)+min);
+                }
+                
+                function melanger(xBlank, yBlank, n)
+                {
+                    if(n === 0)
+                        return;
+                    
+                    var deplacementsPossibles = new Array();
+                    
+                    if(yBlank >= 1) {
+                        deplacementsPossibles.push(''+(yBlank-1)+"-"+xBlank);
+                    }
+                    
+                    if(xBlank >= 1) {
+                        deplacementsPossibles.push(''+yBlank+"-"+(xBlank-1));
+                    }
+                    
+                    if(yBlank < nbLigneColonne-1) {
+                        deplacementsPossibles.push(''+(yBlank+1)+"-"+xBlank);
+                    }
+                    
+                    if(xBlank < nbLigneColonne-1) {
+                        deplacementsPossibles.push(''+yBlank+"-"+(xBlank+1));
+                    }
+                    
+                    var choix = randomIntFromInterval(0, deplacementsPossibles.length - 1);
+                    var x = parseInt(deplacementsPossibles[choix].split('-')[1]);
+                    var y = parseInt(deplacementsPossibles[choix].split('-')[0]);
+
+                    tableauCase[yBlank][xBlank] = tableauCase[y][x];
+                    tableauCase[y][x] = null;
+                    
+                    melanger(x, y, n-1);
+                }
+                
+                function redessinerTab() {
+                    var victoire = true;
+                    for(var i=0; i < nbLigneColonne; i++) {
+                        for(var j=0; j < nbLigneColonne; j++) {
+                            if(tableauCase[i][j] === null) {
+                                $('#'+j+'-'+i).css('background', 'none');
+                            } else {
+                                $('#'+j+'-'+i).css('background', 'url("'+imageURL+'")');
+                                $('#'+j+'-'+i).css('background-position', tableauCase[i][j].background);
+                                
+                                victoire = (victoire && tableauCase[i][j].xReel === j && tableauCase[i][j].yReel === i);
+                            }
+                        }
+                    }
+                    
+                    if(victoire) {
+                        alert('Bravo ! Vous avez gagné !');
+                    }
+                    
+                    $('#tableauJS td').css('background-size', minimumSize+"px "+minimumSize + "px");
+                    
+                    $('#deplacements').html(compteurDeplacements);
+                }
+                
+                $('#jouerBtn').on('click', function() {
+                    
+                    createGrid();
+                    
+                    //Définition image
+                    var motCle = $('#motCle').val();
+                    $.getJSON(getFlikrApiURLForTextAndNumber(motCle,11), function(json) {
+                        setImage(json);
+                        
+                        buildModel();
+                        
+                        $('#0-0').css('background', 'none');
+                        tableauCase[0][0] = null;
+                        
+                        melanger(0, 0, 100);
+                        
+                        redessinerTab();
+                    });
+                    
+                });
+                
+                
+                
+                var deplacements = new Array();
+                var compteurDeplacements = 0;
+                
+                function deplacer(x, y, isCancel) {
+                    if(tableauCase[y][x] === null) {
+                        return;
+                    } 
+                    
+                    if(y >= 1 && tableauCase[y-1][x] === null) {
+                        tableauCase[y-1][x] = tableauCase[y][x];
+                        tableauCase[y][x] = null;
+                        deplacements.push(''+(y-1)+"-"+x);
+                        compteurDeplacements++;
+                        
+                    } else if(x >= 1 && tableauCase[y][x-1] === null) {
+                        tableauCase[y][x-1] = tableauCase[y][x];
+                        tableauCase[y][x] = null;
+                        deplacements.push(''+y+"-"+(x-1));
+                        compteurDeplacements++;
+                        
+                    } else if(y < nbLigneColonne-1 && tableauCase[y+1][x] === null) {
+                        tableauCase[y+1][x] = tableauCase[y][x];
+                        tableauCase[y][x] = null;
+                        deplacements.push(''+(y+1)+"-"+x);
+                        compteurDeplacements++;
+                        
+                    } else if(x < nbLigneColonne-1 && tableauCase[y][x+1] === null) {
+                        tableauCase[y][x+1] = tableauCase[y][x];
+                        tableauCase[y][x] = null;
+                        deplacements.push(''+y+"-"+(x+1));
+                        compteurDeplacements++;
+                    }
+                    
+                    if(isCancel) {
+                        deplacements.pop();
+                        compteurDeplacements -= 2;
+                    }
+                    
+                    redessinerTab();
+                }
+                
+                $('#tableauJS').on('click', 'tr td', function() {
+                    var x = parseInt($(this).attr('id').split('-')[0]);
+                    var y = parseInt($(this).attr('id').split('-')[1]);
+
+                    deplacer(x, y, false);
+                });
+                
+                $('div').on('click', '#cancelBtn', function() {
+                    var idCase = deplacements.pop();
+                    var x = parseInt(idCase.split('-')[1]);
+                    var y = parseInt(idCase.split('-')[0]);
+                    
+                    deplacer(x, y, true);
+                });
+                
+            });
+            
+            
+        </script>
+        
+    </head>
+    <body>
+        
+        <section data-role="page" id="pageConfiguration">
+            <div data-role="header" data-position="fixed">
+                <h1>Options</h1>
+            </div>
+
+            <div data-role="content">
+                <label for="motCle">Mot clé : </label>
+                <input type="text" name="motCle" id="motCle" value="chaton" />
+                <label for="ligneColonne">Nombre de lignes et de colonnes :</label>
+                <input id="ligneColonne" type="range" value="4" max="10" min="1" step="1">
+                <br />
+                <a href="#about" data-transition="flow" id="aboutBtn"><img src="images/icones/about.png" class="pagePrecedente" /></a>
+                <a href="#jouer" data-transition="flow" id="jouerBtn"><img src="images/icones/play.png" class="pageSuivante" /></a>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="about">
+            <div data-role="header" data-position="fixed">
+                <h1>Jeu de taquin : About</h1>
+            </div>
+
+            <div data-role="content">
+                <h4 style="text-align: center">Généralités</h4>
+                <p style="text-align: justify;">
+                    Le taquin est un jeu solitaire en forme de damier créé vers 1870 aux États-Unis.
+                    Sa théorie mathématique a été publiée par l'American Journal of mathematics pure and applied en 1879.
+                    En 1891, son invention fut revendiquée par Sam Loyd3, au moment où le jeu connaissait un engouement considérable, tant aux États-Unis qu'en Europe.
+                    Il est composé de 15 petits carreaux numérotés de 1 à 15 qui glissent dans un cadre prévu pour 16.
+                    Il consiste à remettre dans l'ordre les 15 carreaux à partir d'une configuration initiale quelconque.
+                </p>
+                
+                <h4 style="text-align: center">Aide pour la résolution</h4>
+                <p style="text-align: justify;">
+                    Dans l'hypothèse où la case vide se trouve en bas à droite : <br/><br/>
+                    - remettre le jeu dans l'ordre ligne par ligne en commençant par la ligne du haut<br/>
+                    - quand il ne reste plus que deux lignes mélangées, les réordonner colonne par colonne en commençant par celle de gauche <br/><br/>
+                    Cette méthode ne garantit pas qu'un nombre minimal de mouvements sera effectué, mais est simple à mémoriser et aboutit dans tous les cas où une solution est possible.
+                </p>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="jouer">
+            <div data-role="header" data-position="fixed">
+                <h1>Jeu de taquin</h1>
+            </div>
+
+            <div data-role="content">
+                <a href="#" id="cancelBtn"><img src="images/icones/annuler.png" class="pagePrecedente" /></a>
+                <p>Déplacements :<span id="deplacements">0</span></p>
+                <table id="tableauJS"></table>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+    </body>
+</html>

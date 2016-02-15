@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>ISIC : HTML5</title>
+
+        <link rel="stylesheet" href="support/webmobile7.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/myStyle.css" />
+
+        <script src="support/jquery-2.1.1.min.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="support/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/flikrAPI.js"></script>
+        
+        <style type="text/css">
+            
+            #chaton
+            {
+                display: block;
+                margin: 0 auto; 
+                width: 90%;
+            } 
+            
+            table
+            {
+                border-collapse: collapse;
+                margin: auto;
+            }
+            
+            td
+            {
+                border: solid black 1px;
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+        
+        <script type="text/javascript">
+            $(document).on('pagecreate', '#exercice1', function() {
+                
+                var taille = 0.5;
+                var rotation = 0;
+                var mirroir = false;
+                
+                function transformation() {
+                    if(mirroir){
+                        $('#chaton').css('transform','scale('+(-1*taille)+','+taille+') rotate('+rotation+'deg)');
+                    } else {
+                        $('#chaton').css('transform','scale('+taille+','+taille+') rotate('+rotation+'deg)');
+                    }
+                }
+                
+                transformation();
+                
+                $('#taille').on('change', function(event,ui){
+                    taille = $(this).val()/100;
+                    transformation();
+                });
+                
+                $('#rotation').on('change', function(event,ui){
+                    rotation = $(this).val();
+                    transformation();
+                });
+                
+                $('#mirroir').on('change', function(event,ui){
+                    mirroir = $(this).val() === "on";
+                    transformation();
+                });
+                
+            });
+            
+            
+            var nbLigne = 2;
+            var nbColonne = 2;
+            var espace = 0;
+            $(document).on('pagecreate', '#exercice2, #grilleJS', function() {
+                
+                var minimumSize = Math.min(width, height);
+                
+                function createGrid() {
+                    // On vide une eventuelle grille existante
+                    $('#tableauJS').empty();
+                    
+                    // On récupère les valeurs du formulaire
+                    nbLigne = $('#ligne').val();
+                    nbColonne = $('#colonne').val();
+                    espace = $('#espace').val();
+
+                    // On dimensionne les cases en fonction de la taille de l'écran
+                    $('td').css('width', minimumSize/nbColonne + "px");
+                    $('td').css('height', minimumSize/nbLigne + "px");
+                
+                    // On construit la grille en ajoutant du code html via le javascript
+                    for(var i=0; i < nbLigne; i++){
+                        $('#tableauJS').append('<tr></tr>');
+                        for(var j=0; j < nbColonne; j++){
+                            $('#tableauJS tr:last-child').append('<td></td>');
+                        }
+                    }
+                    
+                    // Améliorations graphiques
+                    if(espace === "0") {
+                        $('#tableauJS').css('border-collapse', 'collapse');
+                    } else {
+                        $('#tableauJS').css('border-collapse', 'separate');
+                    }
+                    // Espace entre les cases
+                    $('#tableauJS').css('border-spacing', espace/2 + "px");
+                    
+                }
+                
+                createGrid();
+                
+                $('#createGrid').on('click', createGrid);
+                
+            });
+            
+            
+            
+            $(document).on('pagecreate', '#exercice3', function() {
+                
+                var deplacementHorizontal = width - 100;
+                var deplacementDiagonal = Math.min(width, height) - 300;
+                var deplacementH1 = "+="+deplacementHorizontal;
+                var deplacementH2 = "-="+deplacementHorizontal;
+                var deplacementD1 = "+="+deplacementDiagonal;
+                var deplacementD2 = "-="+deplacementDiagonal;
+                
+                $('#chatonExo3').animate({left: deplacementH1}, 2000);
+                $('#chatonExo3').animate({left: deplacementH2}, 1000);
+                $('#chatonExo3').animate({top: deplacementD1, left: deplacementD1}, 2000);
+                $('#chatonExo3').animate({top: deplacementD2, left: deplacementD2}, 2000);
+                
+            });
+            
+            
+            
+            $(document).on('pagecreate', '#exercice4', function() {
+                
+                var compteur = 0;
+                var images;
+                
+                $.getJSON(getFlikrApiURLForTextAndNumber("chaton", 20), function(json) {
+                    images = json.photos.photo;
+                    $('#imgFlikr').attr("src",getImageURL(images[0]));
+                });
+                
+                 $('#imageSuivante').on('click',function(){
+                     if(compteur<19){
+                         compteur++;
+                        $('#imgFlikr').attr("src",getImageURL(images[compteur]));
+                     }
+                 });
+                 
+                 $('#imagePrecedente').on('click',function(){
+                     if(compteur>0){
+                         compteur--;
+                         $('#imgFlikr').attr("src",getImageURL(images[compteur]));
+                     }
+                 });
+               
+            });
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <section data-role="page">
+            <div data-role="header" data-position="fixed">
+                <h1>TP3</h1>
+            </div>
+            
+            <div data-role="content" class="circleView">
+                <div class="circle" style="background: url('images/icones/exercice.png'); margin-left: 10%">
+                    <a href="#exercice1" data-transition="flow">Exercice 1</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/exercice.png'); margin-left: 60%">
+                    <a href="#exercice2" data-transition="flow" data-ajax="false">Exercice 2</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/exercice.png'); margin-left: 10%">
+                    <a href="#exercice3" data-transition="flow" data-ajax="false">Exercice 3</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/exercice.png'); margin-left: 60%">
+                    <a href="#exercice4" data-transition="flow" data-ajax="false">Exercice 4</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/taquin.png'); margin-left: 10%">
+                    <a href="jeuDeTaquin.html" data-transition="flow" data-ajax="false">Jeu De Taquin</a>
+                </div>
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="exercice1">
+            <div data-role="header" data-position="fixed">
+                <h1>Exercice 1</h1>
+            </div>
+            
+            <div data-role="content">
+                <img src="images/chaton.png" id="chaton" />
+                <label for="taille">Taille :</label>
+                <input id="taille" type="range" value="50" max="100" min="0" step="1">
+                <label for="rotation">Rotation :</label>
+                <input id="rotation" type="range" value="0" max="180" min="-180" step="1">
+                <label for="mirroir">Mirroir :</label>
+                <select id="mirroir" name="mirroir" data-role="slider">
+                    <option value="on">On</option>
+                    <option value="off" selected="selected">Off</option>
+                </select>
+                <br />
+                <a href="#grille" data-transition="flow"><img src="images/icones/pageSuivante.png" class="pageSuivante" /></a>
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="grille">
+            <div data-role="header" data-position="fixed">
+                <h1>Grille</h1>
+            </div>
+            
+            <div data-role="content">
+                <table>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="exercice2">
+            <div data-role="header" data-position="fixed">
+                <h1>Exercice 2</h1>
+            </div>
+            
+            <div data-role="content">
+                <label for="ligne">Nombre de lignes :</label>
+                <input id="ligne" type="range" value="2" max="10" min="1" step="1">
+                <label for="colonne">Nombre de colonnes :</label>
+                <input id="colonne" type="range" value="2" max="10" min="1" step="1">
+                <label for="espace">Espace entre chacune des cases :</label>
+                <input id="espace" type="range" value="0" max="100" min="0" step="10">
+                <br />
+                <a href="#grilleJS" id="createGrid" data-transition="flow"><img src="images/icones/pageSuivante.png" class="pageSuivante" /></a>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="grilleJS">
+            <div data-role="header" data-position="fixed">
+                <h1>Grille JS</h1>
+            </div>
+            
+            <div data-role="content">
+                <table id="tableauJS"></table>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="exercice3">
+            <div data-role="header" data-position="fixed">
+                <h1>Exercice 3</h1>
+            </div>
+            
+            <div data-role="content">
+                <img src="images/chaton.png" id="chatonExo3" style="position:absolute" width="100" height="100" />
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="exercice4">
+            <div data-role="header" data-position="fixed">
+                <h1>Exercice 4</h1>
+            </div>
+            
+            <div data-role="content">
+                <a href="#" id="imagePrecedente"><img src="images/icones/pagePrecedente.png" class="pagePrecedente" /></a>
+                <a href="#" id="imageSuivante"><img src="images/icones/pageSuivante.png" class="pageSuivante" /></a>
+                <img src="" id="imgFlikr" class="center" />
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+    </body>
+    
+</html>

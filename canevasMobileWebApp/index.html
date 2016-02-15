@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>ISIC : HTML5</title>
+
+        <link rel="stylesheet" href="support/webmobile7.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/myStyle.css" />
+
+        <script src="support/jquery-2.1.1.min.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="support/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        
+    </head>
+    <body>
+
+        <section data-role="page">
+            <div data-role="header" data-position="fixed">
+                <h1>ISIC : HTML5</h1>
+            </div>
+            
+            <div data-role="content" class="circleView">
+                <div class="circle" style="background: url('images/icones/mediatheque.png'); margin-left: 10%">
+                    <a href="#mediatheque" data-transition="flow">Médiathèque</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/tp.png'); margin-left: 60%">
+                    <a href="tp2.html" data-transition="flow" data-ajax="false">TP2</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/tp2.png'); margin-left: 10%">
+                    <a href="tp3.html" data-transition="flow" data-ajax="false">TP3</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/parametres.png'); margin-left: 60%">
+                    <a href="parametres.html" data-transition="flow" data-ajax="false">Paramètres</a>
+                </div>
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="mediatheque">
+            <div data-role="header" data-position="fixed">
+                <h1>Médiathèque</h1>
+            </div>
+            
+            <div data-role="content">
+                <div class="circle" style="background: url('images/icones/jeuxVideo.png'); margin-left: 60%">
+                    <a href="jeux-video.html" data-transition="flow" data-ajax="false">Jeux Vidéo</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/humour.png'); margin-left: 10%">
+                    <a href="humoristes.html" data-transition="flow" data-ajax="false">Humoristes</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/jeux.png'); margin-left: 60%">
+                    <a href="#jeux" data-transition="flow">Jeux en ligne</a>
+                </div>
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        <section data-role="page" id="jeux">
+            <div data-role="header" data-position="fixed">
+                <h1>Jeux en ligne</h1>
+            </div>
+            
+            <div data-role="content">
+                <div class="circle" style="background: url('images/icones/morpion.png'); margin-left: 10%">
+                    <a href="morpion.html" data-transition="flow" data-ajax="false">Morpion : le jeu</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/taquin.png'); margin-left: 60%">
+                    <a href="jeuDeTaquin.html" data-transition="flow" data-ajax="false">Jeu De Taquin</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/interdit.png'); margin-left: 10%">
+                    <a href="interdit.html" data-transition="flow" data-ajax="false">Entrée interdite</a>
+                </div>
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>ISIC : HTML5</title>
+
+        <link rel="stylesheet" href="support/webmobile7.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/myStyle.css" />
+
+        <script src="support/jquery-2.1.1.min.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="support/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+
+        <section data-role="page">
+            <div data-role="header" data-position="fixed">
+                <h1>Paramètres</h1>
+            </div>
+
+            <div data-role="content">
+                
+                <fieldset data-role="controlgroup" id="theme-parameter">
+                        <legend>Choisir un thème:</legend>
+                        <input type="radio" name="radio-choice" id="radio-choice-1" value="a" />
+                        <label for="radio-choice-1">A</label>
+
+                        <input type="radio" name="radio-choice" id="radio-choice-2" value="b" />
+                        <label for="radio-choice-2">B</label>
+
+                        <input type="radio" name="radio-choice" id="radio-choice-3" value="c" />
+                        <label for="radio-choice-3">C</label>
+
+                        <input type="radio" name="radio-choice" id="radio-choice-4" value="d" />
+                        <label for="radio-choice-4">D</label>
+                        
+                        <input type="radio" name="radio-choice" id="radio-choice-5" value="e" />
+                        <label for="radio-choice-5">E</label>
+                        
+                        <input type="radio" name="radio-choice" id="radio-choice-6" value="f" />
+                        <label for="radio-choice-6">F</label>
+                </fieldset>
+                
+                <script type="text/javascript">
+                    $('#theme-parameter input[value="'+theme+'"]').prop('checked', true);
+                </script>
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+    </body>
+</html>

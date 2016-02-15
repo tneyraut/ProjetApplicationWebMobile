@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+
+<html>
+    <head> 
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>ISIC : HTML5</title>
+        
+        <link rel="stylesheet" href="support/webmobile7.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/myStyle.css" />
+
+        <script src="support/jquery-2.1.1.min.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="support/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    </head>
+
+    <body>
+
+        <section data-role="page" id="jeuxvideo">
+            <div data-role="header" data-position="fixed">
+                <h1>Jeux Vidéo</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="circle" style="background: url('images/jeux/rpg.png'); margin-left: 60%">
+                    <a href="#rpg" data-transition="slidefade">RPG</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/reflexion.png'); margin-left: 10%">
+                    <a href="#reflexion" data-transition="flip">Jeux de réflexion</a>
+                </div>
+                    <div class="circle" style="background: url('images/jeux/action.png'); margin-left: 60%">
+                    <a href="#action" data-transition="turn">Jeux d'action</a>
+                </div>    
+                <div class="circle" style="background: url('images/jeux/carte.png'); margin-left: 10%">
+                    <a href="#carte" data-transition="pop">Jeux de cartes</a>
+                </div>    
+                <div class="circle" style="background: url('images/jeux/simulation.png'); margin-left: 60%">
+                    <a href="#simulation" data-transition="slidedown">Simulations</a>
+                </div>    
+                <div class="circle" style="background: url('images/jeux/strategie.png'); margin-left: 10%">
+                    <a href="#strategie" data-transition="flow">Jeux de stratégie</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="rpg">
+            <div data-role="header" data-position="fixed">
+                <h1>RPG</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="circle" style="background: url('images/jeux/guildWars.png'); margin-left: 60%">
+                    <a href="#guildWars" data-transition="flow">Guild Wars</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/guildWars2.png'); margin-left: 10%">
+                    <a href="#guildWars2" data-transition="flow">Guild Wars II</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/worldOfWarCraft.png'); margin-left: 60%">
+                    <a href="#worldOfWarCraft" data-transition="flow">World of Warcraft</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/dofus.png'); margin-left: 10%">
+                    <a href="#dofus" data-transition="flow">Dofus</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        <section data-role="page" id="reflexion">
+            <div data-role="header" data-position="fixed">
+                <h1>Jeux de réflexion</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="circle" style="background: url('images/jeux/echecs.png'); margin-left: 60%">
+                    <a href="#echecs" data-transition="flow">Les échecs</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/demineur.png'); margin-left: 10%">
+                    <a href="#demineur" data-transition="flow">Le démineur</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        <section data-role="page" id="action">
+            <div data-role="header" data-position="fixed">
+                <h1>Jeux d'action</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="circle" style="background: url('images/jeux/cod4.png'); margin-left: 60%">
+                    <a href="#cod" data-transition="flow">Call of Duty 4 Modern Warfart</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/massEffect3.png'); margin-left: 10%">
+                    <a href="#massEffect3" data-transition="flow">Mass Effect 3</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/medalOfHonor.png'); margin-left: 60%">
+                    <a href="#medalOfHonor" data-transition="flow">Medal of Honor Airborne</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/battlefield2.png'); margin-left: 10%">
+                    <a href="#battlefield2" data-transition="flow">Battlefield 2</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        <section data-role="page" id="carte">
+            <div data-role="header" data-position="fixed">
+                <h1>Jeux de carte</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="circle" style="background: url('images/jeux/hearthstone.png'); margin-left: 60%">
+                    <a href="#hearthstone" data-transition="flow">Hearthstone</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/yugioh.png'); margin-left: 10%">
+                    <a href="#yugioh" data-transition="flow">Yu-Gi-Oh</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/dameDePique.png'); margin-left: 60%">
+                    <a href="#dameDePique" data-transition="flow">Dame de Pique</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/tarot.png'); margin-left: 10%">
+                    <a href="#tarot" data-transition="flow">Tarot</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        <section data-role="page" id="simulation">
+            <div data-role="header" data-position="fixed">
+                <h1>Simulations</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="circle" style="background: url('images/jeux/fifa14.png'); margin-left: 60%">
+                    <a href="#fifa14" data-transition="flow">Fifa 14</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/lesSims.png'); margin-left: 10%">
+                    <a href="#lesSims4" data-transition="flow">Les Sims 4</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/needForSpeed3.png'); margin-left: 60%">
+                    <a href="#needForSpeed3" data-transition="flow">Need for Speed 3 : Most Wanted</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/footballManager.png'); margin-left: 10%">
+                    <a href="#footballManager2014" data-transition="flow">Football Manager 2014</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        <section data-role="page" id="strategie">
+            <div data-role="header" data-position="fixed">
+                <h1>Jeux de Stratégies</h1>
+            </div>
+
+            <div data-role="content">
+                <div class="circle" style="background: url('images/jeux/dawnOfWar.png'); margin-left: 60%">
+                    <a href="#dawnOfWar" data-transition="flow">Dawn of War</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/ageOfEmpire.png'); margin-left: 10%">
+                    <a href="#ageOfEmpire" data-transition="flow">Age of Empire</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/riseOfNations.png'); margin-left: 60%">
+                    <a href="#riseOfNations" data-transition="flow">Rise of Nations</a>
+                </div>
+                <div class="circle" style="background: url('images/jeux/strongholdCrusader.png'); margin-left: 10%">
+                    <a href="#strongholdCrusader" data-transition="flow">Stronghold Crusader</a>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+
+        
+        <section data-role="page" id="guildWars">
+            <div data-role="header" data-position="fixed">
+                <h1>Guild Wars</h1>
+            </div>
+
+            <div data-role="popup" id="imgGuildWars" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/guildWars.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgGuildWars" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/guildWars.png" /></a>
+                <p><strong>Prix :</strong> 20 €</p>
+                <p><strong>Note :</strong> Ce jeu a reçu une note de 18/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Guild Wars est un jeu de rôle en ligne qui entraîne le joueur dans un univers heroïc-fantasy.
+                        Jouable sans abonnement, il permet de faire évoluer son personnage en combattant des monstres, mais aussi en affrontant d'autres joueurs dans des combats et des tournois en arène.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://global.ncsoft.com/global/" target="_blank">NCsoft</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.arena.net/" target="_blank">ArenaNet</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>28 avril 2005</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <object type="text/html" data="http://www.youtube.com/embed/dAGS5-hhCcY" class="videoYoutube"></object>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="guildWars2">
+            <div data-role="header" data-position="fixed">
+                <h1>Guild WarsII</h1>
+            </div>
+
+            <div data-role="popup" id="imgGuildWars2" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/guildWars2.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgGuildWars2" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/guildWars2.png" /></a>
+
+                <p><strong>Prix :</strong> 50 €</p>
+                <p><strong>Note :</strong> Ce jeu a reçu une note de 17/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Guild Wars 2 est un jeu de rôle massivement multijoueur qui entraîne le joueur dans un univers heroïc-fantasy.
+                        Jouable sans abonnement, il permet de faire évoluer son personnage en combattant des monstres, mais aussi en affrontant d'autres joueurs dans des combats en champs de bataille et dans un mode "Monde contre Monde" faisant s'affronter 3 serveurs différents dans de grandes batailles impliquant de conquérir différents points d'une gigantesque carte.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://global.ncsoft.com/global/" target="_blank">NCsoft</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.arena.net/" target="_blank">ArenaNet</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>28 août 2012</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <video controls="controls" class="video">
+                            <source src="videos/GuildWars2.mp4" type="video/mp4" />
+                            https://www.youtube.com/watch?v=c
+                        </video>
+                    </div>
+                </div>
+
+                <div data-role="footer" data-position="fixed"></div>
+            </div>
+        </section>
+        
+        
+
+        <section data-role="page" id="worldOfWarCraft">
+            <div data-role="header" data-position="fixed">
+                <h1>World of Warcraft</h1>
+            </div>
+
+            <div data-role="popup" id="imgWorldOfWarCraft" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/worldOfWarCraft.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgWorldOfWarCraft" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/worldOfWarCraft.png" /></a>
+                <p><strong>Prix :</strong>Abonnement de 20 € par mois</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 17/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        World of Warcraft sur PC est un jeu de rôle massivement multijoueurs.
+                        Au sein du royaume d'Azeroth, rejoignez les forces de la Horde ou de l'Alliance.
+                        Créez votre personnage parmi huit races et neuf classes disponibles puis rejoignez ou fondez votre propre guilde.
+                        Fabriquez armes et armures et combattez seul ou en groupe face à des armées de démons et autres bestioles plus ou moins ragoûtantes.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.activision.com/" target="_blank">Vivendi Universal Games</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://eu.blizzard.com/fr-fr/" target="_blank">Blizzard Entertainment</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>11 février 2005</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/_Ni0HOvAB8k" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="dofus">
+            <div data-role="header" data-position="fixed">
+                <h1>Dofus</h1>
+            </div>
+
+            <div data-role="popup" id="imgDofus" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/dofus.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgDofus" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/dofus.png" /></a>
+                <p><strong>Prix :</strong>Gratuit</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 12/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Dofus est un jeu de rôle massivement multijoueur qui se joue par navigateur.
+                        L'univers coloré et enjoué du titre lui confère une ambiance particulière remplie d'humour et de bonne humeur.
+                        Vivement encouragé à se rallier à un groupe de personnages, le joueur a pour mission principale de retrouver des oeufs de dragons légendaires disparus depuis des lustres.
+                        Le quotidien est aussi marqué par de nombreuses autres quêtes à remplir à travers le vaste monde du jeu.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.ankama.com/fr" target="_blank">Ankama Studio</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.ankama.com/fr" target="_blank">Ankama Studio</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>23 août 2004</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/Tzc35QVpzfA" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+
+        <section data-role="page" id="echecs">
+            <div data-role="header" data-position="fixed">
+                <h1>Les échecs</h1>
+            </div>
+
+            <div data-role="popup" id="imgEchecs" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/echecs.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgEchecs" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/echecs.png" /></a>
+                <p><strong>Prix :</strong>Gratuit</p>
+                <p><strong>Note :</strong>12/20</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Le jeu d’échecs oppose deux joueurs de part et d’autre d’un plateau ou tablier appelé échiquier composé de soixante-quatre cases claires et sombres nommées les cases blanches et les cases noires.
+                        Les joueurs jouent à tour de rôle en déplaçant l'une de leurs seize pièces (ou deux pièces en cas de roque), claires pour le camp des blancs, sombres pour le camp des noirs.
+                        Chaque joueur possède au départ un roi, une dame, deux tours, deux fous, deux cavaliers et huit pions.
+                        Le but du jeu est d'infliger à son adversaire un échec et mat, une situation dans laquelle le roi d'un joueur est en prise sans qu'il soit possible d'y remédier.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p>Aucun</p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p>Aucun</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p style="text-align: justify;">Le jeu a été introduit dans le Sud de l'Europe à partir du Xe siècle par les Arabes.</p>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="demineur">
+            <div data-role="header" data-position="fixed">
+                <h1>Le démineur</h1>
+            </div>
+
+            <div data-role="popup" id="imgDemineur" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/demineur.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgDemineur" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/demineur.png" /></a>
+                <p><strong>Prix :</strong>Gratuit</p>
+                <p><strong>Note :</strong>17/20</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Le démineur est un jeu de réflexion dont le but est de localiser des mines cachées dans un champ virtuel avec pour seule indication le nombre de mines dans les zones adjacentes.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p>Aucun</p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p>Aucun</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>Aucune date disponible</p>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+
+        
+        <section data-role="page" id="cod">
+            <div data-role="header" data-position="fixed">
+                <h1>Call of Duty 4 Modern Warfart</h1>
+            </div>
+
+            <div data-role="popup" id="imgCOD4" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/cod4.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgCOD4" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/cod4.png" /></a>
+                <p><strong>Prix :</strong>12 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 17/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Call of Duty 4 : Modern Warfare un jeu de tir en vue subjective sur PC qui se déroule dans un contexte contemporain et qui permet de suivre deux conflits fictifs en parallèle.
+                        Le premier place le joueur dans la peau d'un marine américain coincé dans une guérilla urbaine au Moyen-Orient, tandis que dans l'autre lui fait incarner un agent d'élite britannique embarqué dans des missions discrètes en Russie et Europe de l'Est.
+                        Plusieurs modes multijoueurs sont aussi de la partie.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.activision.com/" target="_blank">Activision</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.infinityward.com/" target="_blank">Infinity Ward</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>9 novembre 2007</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/zTDGSjSBHn4" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="massEffect3">
+            <div data-role="header" data-position="fixed">
+                <h1>Mass Effect 3</h1>
+            </div>
+
+            <div data-role="popup" id="imgMassEffect3" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/massEffect3.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgMassEffect3" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/massEffect3.png" /></a>
+                <p><strong>Prix :</strong>20 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 17/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Mass Effect 3 est un jeu de rôle futuriste sur PC où vous devez lutter contre les troupes de Cerberus, une organisation pro-humaine, et les terribles Moissonneurs.
+                        En parcourant la galaxie vous êtes amené à effectuer des choix qui ont une incidence sur la suite de l'aventure et sur l'issue de la guerre.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.ea.com/fr" target="_blank">Electronic Arts</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.bioware.com/fr/" target="_blank">BioWare</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>8 mars 2012</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/mnFZQQTtuds" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="medalOfHonor">
+            <div data-role="header" data-position="fixed">
+                <h1>Medal of Honor Airborne</h1>
+            </div>
+
+            <div data-role="popup" id="imgMedalOfHonor" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/medalOfHonor.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgMedalOfHonor" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/medalOfHonor.png" /></a>
+                <p><strong>Prix :</strong>10 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 14/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Issu de la longue série des FPS de la seconde guerre mondiale, Medal of Honor : Airborne sur PC permet au joueur de découvrir un aspect encore non exploré jusque-là, celui des régiments de parachutistes.
+                        Descendez dans l'arène en faisant attention à ne pas trop vous éloigner des points sécurisés afin de minimiser les risques lors de votre atterrissage.
+                        Aidez ainsi les forces alliées à venir à bout de l'opposant germanique.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.ea.com/fr" target="_blank">Electronic Arts</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.ea.com/fr" target="_blank">Electronic Arts</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>13 septembre 2007</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/AVI9TyuFozM" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="battlefield2">
+            <div data-role="header" data-position="fixed">
+                <h1>Battlefield 2</h1>
+            </div>
+
+            <div data-role="popup" id="imgBattlefield2" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/battlefield2.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgBattlefield2" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/battlefield2.png" /></a>
+                <p><strong>Prix :</strong>10 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 18/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Battlefield 2 sur PC vous transporte au coeur du conflit moderne en vous proposant des combats par équipes.
+                        Les joueurs peuvent combattre sous l'uniforme de trois superpuissances : les Etats-Unis, la Chine ou la nouvelle coalition du Moyen-Orient.
+                        Ils prennent les commandes de plus de trente véhicules et utilisent les dernières technologies en matière d'armement pour affronter plus de cent joueurs en ligne sur PC.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.ea.com/fr" target="_blank">Electronic Arts</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://dice.se/" target="_blank">Digital Illusions</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>23 juin 2005</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/sv1qbuNA1ys" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+
+        
+        <section data-role="page" id="hearthstone">
+            <div data-role="header" data-position="fixed">
+                <h1>Hearthstone</h1>
+            </div>
+
+            <div data-role="popup" id="imgHearthstone" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/hearthstone.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgHearthstone" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/hearthstone.png" /></a>
+                <p><strong>Prix :</strong>Gratuit</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 13/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        HearthStone : Heroes of Warcraft est un jeu de cartes à collectionner gratuit sur PC, basé sur l'univers Warcraft et World of Warcraft.
+                        Incarnez l'une des neuf classes du jeu, créez vos decks composés d'armes, de sorts et de serviteurs et affrontez l'IA ou des joueurs en ligne pour atteindre le rang Légende !
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://eu.blizzard.com/fr-fr/" target="_blank">Blizzard Entertainment</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://eu.blizzard.com/fr-fr/" target="_blank">Blizzard Entertainment</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>12 mars 2014</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/jyVIsEgk68Q" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="yugioh">
+            <div data-role="header" data-position="fixed">
+                <h1>Yu-Gi-Oh</h1>
+            </div>
+
+            <div data-role="popup" id="imgyugioh" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/yugioh.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgyugioh" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/yugioh.png" /></a>
+                <p><strong>Prix :</strong>10 €</p>
+                <p><strong>Note :</strong>12/20</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">Yu-Gi-Oh  est un jeu de cartes inspiré d'un manga japonais</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p>Konami</p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p>Konami</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>Aucune date disponible</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/5NnDrWkAJug" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="dameDePique">
+            <div data-role="header" data-position="fixed">
+                <h1>Dame de Pique</h1>
+            </div>
+
+            <div data-role="popup" id="imgDameDePique" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/dameDePique.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgDameDePique" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/dameDePique.png" /></a>
+                <p><strong>Prix :</strong>Gratuit</p>
+                <p><strong>Note :</strong>15/20</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        La Dame de Pique est un jeu de cartes se jouant avec un jeu de 52 ou 54 cartes.
+                        À 4 il se joue avec 13 cartes à chacun et à 6 avec 9 cartes chacun(il faut inclure les jokers, ils remportent automatiquement la manche).
+                        Il est dérivé du jeu de cartes le barbu et c'est l'un des jeux de base de Windows.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p>Aucun</p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p>Aucun</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>Aucune date disponible</p>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="tarot">
+            <div data-role="header" data-position="fixed">
+                <h1>Tarot</h1>
+            </div>
+
+            <div data-role="popup" id="imgTarot" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/tarot.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgTarot" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/tarot.png" /></a>
+                <p><strong>Prix :</strong>Gratuit</p>
+                <p><strong>Note :</strong>18/20</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Le tarot est le nom de plusieurs jeux de cartes et de plusieurs ensembles de cartes à jouer, généralement au nombre de 78.
+                        Le premier jeu de tarot a été créé au XVe siècle en Europe.
+                        Les différents jeux de tarot permettent de jouer à de multiples jeux tels le tarocchini (en) italien ou le tarot français.
+                        À partir de la fin du XVIIIe siècle, le tarot possède également un usage occulte et mystique.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p>Aucun</p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p>Aucun</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>XVe siècle</p>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+
+        <section data-role="page" id="fifa14">
+            <div data-role="header" data-position="fixed">
+                <h1>Fifa 14</h1>
+            </div>
+
+            <div data-role="popup" id="imgFifa14" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/fifa14.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgFifa14" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/fifa14.png" /></a>
+                <p><strong>Prix :</strong>15 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 11/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        FIFA 14 est un jeu de football sur PC.
+                        Outre l'arrivée des championnats argentins, chiliens, et colombiens, découvrez le nouveau système de frappes pures, qui vous permet de réaliser des tirs avec une physique plus réaliste.
+                        Avec une refonte complète de la Carrière et de FIFA Ultimate Team, les modes de jeu existants ont également le droit à leur lot de nouvelles fonctionnalités.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.ea.com/fr" target="_blank">Electronic Arts</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.ea.com/fr" target="_blank">EA Sports</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>27 septembre 2013</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/APMrtUd4WW8" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="lesSims4">
+            <div data-role="header" data-position="fixed">
+                <h1>Les Sims 4</h1>
+            </div>
+
+            <div data-role="popup" id="imgLesSims" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/lesSims.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgLesSims" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/lesSims.png" /></a>
+                <p><strong>Prix :</strong>50 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 7/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Les Sims 4 est une simulation de vie disponible sur PC.
+                        Le joueur doit y gérer les besoins élémentaires (hygiène, faim, etc.) de personnages appelés Sims, mais doit aussi prendre en compte leur caractère, leurs désirs ainsi que leurs émotions pour arriver à ses fins.
+                        Ainsi, il devient possible de bâtir une maison grandiose, de les faire progresser dans leur travail, de multiplier les conquêtes...
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.ea.com/fr" target="_blank">Electronic Arts</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.maxis.com/" target="_blank">Maxis</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>4 septembre 2014</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/_qCK84dDCRs" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="needForSpeed3">
+            <div data-role="header" data-position="fixed">
+                <h1>Need for Speed 3 : Most Wanted</h1>
+            </div>
+
+            <div data-role="popup" id="imgNeedForSpeed3" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/needForSpeed3.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgNeedForSpeed3" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/needForSpeed3.png" /></a>
+                <p><strong>Prix :</strong>10 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 11/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Reboot de l'opus sorti en 2005, Need for Speed : Most Wanted est un jeu de courses sur PC qui offre la possibilité de défier les forces de l'ordre à travers diverses courses-poursuites.
+                        Le but est ici de collectionner les infractions tout en évitant la police afin de devenir le conducteur le plus recherché.
+                        Plusieurs sortes de voitures sont disponibles (sport, supercars, muscle cars) et un environnement ouvert vous sert de terrain de jeu.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.ea.com/fr" target="_blank">Electronic Arts</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://criteriongames.com/" target="_blank">Criterion Studios</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>31 octobre 2012</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/u7cW56a8BYg" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="footballManager2014">
+            <div data-role="header" data-position="fixed">
+                <h1>Football Manager 2014</h1>
+            </div>
+
+            <div data-role="popup" id="imgFootballManager" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/footballManager.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgFootballManager" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/footballManager.png" /></a>
+                <p><strong>Prix :</strong>10 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 11/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Football Manager 2014 sur PC est un jeu de gestion comprenant 1.000 améliorations depuis son prédécesseur dont le système de sauvegardes sur le cloud.
+                        Il propose aussi un éditeur de défis, défis qu'il est ensuite possible de partager avec d'autres joueurs en ligne.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.sega.com/" target="_blank">Sega</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.sigames.com/" target="_blank">Sports Interactive</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>31 octobre 2013</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/T_2qjru12Qs" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+
+        <section data-role="page" id="dawnOfWar">
+
+            <div data-role="header" data-position="fixed">
+                <h1>Dawn of War</h1>
+            </div>
+
+            <div data-role="popup" id="imgDawnOfWar" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/dawnOfWar.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgDawnOfWar" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/dawnOfWar.png" /></a>
+                <p><strong>Prix :</strong>5 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 17/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        La série de Warhammer devient avec Warhammer 40.000 : Dawn of War un jeu de stratégie sur PC.
+                        Personnalisez vos unités et dirigez-les dans des batailles sans merci entre les humains, les orcs, les eldars et les forces du Chaos.
+                        Jouable jusqu'à 8 joueurs, Warhammer 40.000 : Dawn of War offre aux inconditionnelles de la série une véritable transposition de leur jeu de plateau dans un jeu vidéo.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.thq.com/us?lang=en_US" target="_blank">THQ</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.relic.com/" target="_blank">Relic Entertainment</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>24 septembre 2004</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/A-E1RcRvny8" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="ageOfEmpire">
+            <div data-role="header" data-position="fixed">
+                <h1>Age of Empire</h1>
+            </div>
+
+            <div data-role="popup" id="imgAgeOfEmpire" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/ageOfEmpire.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgAgeOfEmpire" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/ageOfEmpire.png" /></a>
+                <p><strong>Prix :</strong>5 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 18/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Age of Empires est un jeu de stratégie sur PC.
+                        Comment vous y prendrez-vous pour diriger le monde ?
+                        Allez-vous conquérir des civilisations ennemies ?
+                        Découvrir les secrets du monde ?
+                        Telles sont les voies qui s'offrent à vous, guide spirituel d'une tribu de l'âge de pierre.
+                        Le soft est jouable jusqu'à 8 joueurs en réseau local ou sur internet.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.microsoft.com/france/jeux/" target="_blank">Microsoft</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.ensemblestudios.com/" target="_blank">Ensemble Studios</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>1997</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/3bQ-WsquMwE" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="riseOfNations">
+            <div data-role="header" data-position="fixed">
+                <h1>Rise Of Nations</h1>
+            </div>
+
+            <div data-role="popup" id="imgRiseOfNations" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/riseOfNations.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgRiseOfNations" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/riseOfNations.png" /></a>
+                <p><strong>Prix :</strong>5 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 17/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Rise of Nations est un jeu de stratégie sorti sur PC.
+                        Prenez la tête de 18 nations à l'historique chargé dont vous aurez à gérer le développement sur près de 6000 ans, de l'Antiquité à l'âge de l'information.
+                        Un mode multijoueur permet d'affronter des amis sur internet.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.microsoft.com/france/jeux/" target="_blank">Microsoft</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.bighugegames.com/" target="_blank">Big Huge Games</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>Mai 2003</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/NRNbMv5RRMM" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+        
+        
+        <section data-role="page" id="strongholdCrusader">
+            <div data-role="header" data-position="fixed">
+                <h1>Stronghold Crusader</h1>
+            </div>
+
+            <div data-role="popup" id="imgStrongholdCrusader" data-overlay-theme="b" data-theme="b" data-corners="false">
+                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                <img src="images/jeux/strongholdCrusader.png" />
+            </div>
+
+            <div data-role="content">
+                <a href="#imgStrongholdCrusader" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imgDescription" src="images/jeux/strongholdCrusader.png" /></a>
+                <p><strong>Prix :</strong>10 €</p>
+                <p><strong>Note :</strong>Ce jeu a reçu une note de 18/20.</p>
+
+                <p class="clear">Votre note pour ce jeu : </p>
+                <button type="button" class="valider"><img src="images/icones/valider.png" width="30" /></button>
+                <input type="range" value="10" max="20" min="0" step="1">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>Descriptif</h4>
+                    <p style="text-align: justify;">
+                        Stronghold Crusader est un jeu de stratégie sur PC qui nous conduit à la conquête de Jérusalem.
+                        Le jeu propose donc de revivre les Croisades des XIème et XIIème siècles.
+                        Vous devez bâtir votre forteresse, gérer vos ressources et bien sûr les matières premières nécessaires à la construction de bâtiments.
+                        Le titre offre la possibilité de créer ses propres scénarios et de combattre en mode Escarmouche, jusqu'à 8 joueurs en réseau local ou sur internet.
+                    </p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Editeur</h4>
+                    <p><a href="http://www.take2games.com/" target="_blank">Take 2 Interactive</a></p>
+                </div>		
+
+                <div data-role="collapsible">
+                    <h4>Developpeur</h4>
+                    <p><a href="http://www.fireflyworlds.com/S" target="_blank">Firefly Studios</a></p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Date de sortie en France</h4>
+                    <p>27 septembre 2002</p>
+                </div>
+
+                <div data-role="collapsible">
+                    <h4>Vidéo</h4>
+                    <div class="center">
+                        <object type="text/html" data="http://www.youtube.com/embed/6uXUvF3oe-8" class="videoYoutube"></object>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+    </body>
+
+</html>

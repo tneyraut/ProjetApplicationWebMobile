@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Morpion : le jeu</title>
+
+        <link rel="stylesheet" href="support/webmobile7.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/myStyle.css" />
+
+        <script src="support/jquery-2.1.1.min.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="support/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+        <style type="text/css">
+            table
+            {
+                border-collapse: collapse;
+                margin: auto;
+            }
+
+            td
+            {
+                border: 1px solid black;
+                width: 100px;
+                height: 100px;
+                background: no-repeat;
+                text-align: center;
+            }
+
+            .vainqueur
+            {
+                font-size: 100%;
+                text-align: center;
+            }
+        </style>
+
+        <script type="text/javascript">
+
+            //Variables globales
+            var score = 0;
+            var scoreIA = 0;
+            var compteurIA;
+            
+            var finish1;
+            var finish2;
+            var finish3;
+            var finish4;
+            
+            var indice;
+            var indice1;
+
+            var vainqueur;
+            var premier = true;
+            var tableau = new Array();
+
+            $(document).on('pagecreate', '#morpion', function() {
+
+                //Création de la grille
+                function createGrid() {
+                    $('#tableauJS').empty();
+                    for (var i = 0; i < 3; i++) {
+                        $('#tableauJS').append('<tr></tr>');
+
+                        for (var j = 0; j < 3; j++) {
+                            $('#tableauJS tr:last-child').append('<td id="' + j + '-' + i + '"></td>');
+                        }
+                    }
+
+                    var minimumSize = Math.min(width, height);
+                    var sizeCase = minimumSize / 3;
+
+                    $('td').css('width', sizeCase + "px");
+                    $('td').css('height', sizeCase + "px");
+                    $('td').css('font-size', sizeCase-10 + "px");
+                }
+
+                createGrid();
+
+                //Création d'une nouvelle partie
+                function reset() {
+                    compteurIA = 0;
+                    vainqueur = "";
+                    finish1 = false;
+                    finish2 = false;
+                    finish3 = false;
+                    finish4 = false;
+                    
+                    $('#tableauJS td').empty();
+                    
+                    for (var i = 0; i < 3; i++) {
+                        tableau[i] = new Array();
+                        for (var j = 0; j < 3; j++) {
+                            tableau[i][j] = "";
+                        }
+                    }
+                }
+
+                reset();
+
+                $('#tableauJS').on('click', 'tr td', function() {
+                    if($(this).text() === "")  {
+                        $(this).text("X");
+                        var x = parseInt($(this).attr('id').split('-')[0]);
+                        var y = parseInt($(this).attr('id').split('-')[1]);
+                        tableau[y][x] = "X";
+
+                        compteurIA++;
+
+                        if (!isFinished()) {
+                            IA();
+                            compteurIA++;
+
+                            if (isFinished()) {
+                                victoire();
+                            }
+                        }
+                        else {
+                            victoire();
+                        }
+                    }
+                });
+
+                function victoire() {
+                    if(vainqueur === "X") {
+                        alert('Bravo ! Vous avez gagné !');
+                        score++;
+                        premier = true;
+                    }
+                    else if (vainqueur === "O"){
+                        alert('Dommage ! Vous avez échoué !');
+                        scoreIA++;
+                        premier = false;
+                    }
+                    else {
+                        alert('Egalité !');
+                    }
+                    
+                    $('#scoreJoueur').html(score);
+                    $('#scoreIA').html(scoreIA);
+                    
+                    reset();
+                        
+                    if (!premier) {
+                        IA();
+                        compteurIA++;
+                    }
+                }
+
+                //IA
+                function IA() {
+                    if (compteurIA === 0) {
+                        tableau[0][0] = "O";
+                        $("#0-0").text("O");
+                    }
+                    if (compteurIA === 1) {
+                        if (tableau[1][1] === "X") {
+                            tableau[0][0] = "O";
+                            $("#0-0").text("O");
+                        }
+                        else {
+                            tableau[1][1] = "O";
+                            $("#1-1").text("O");
+                        }
+                    }
+                    if (compteurIA === 2) {
+                        if (tableau[0][1] === "X") {
+                            tableau[2][0] = "O";
+                            $("#0-2").text("O");
+                            finish1 = true;
+                        }
+                        if (tableau[1][0] === "X") {
+                            tableau[0][2] = "O";
+                            $("#2-0").text("O");
+                            finish1 = true;
+                        }
+                        if (tableau[0][2] === "X" || tableau[2][2] === "X" || tableau[2][0] === "X") {
+                            if (tableau[0][2] !== "X") {
+                                tableau[0][2] = "O";
+                                $("#2-0").text("O");
+                            }
+                            else {
+                                if (tableau[2][0] !== "X") {
+                                    tableau[2][0] = "O";
+                                    $("#0-2").text("O");
+                                }
+                                else {
+                                    tableau[2][2] = "O";
+                                    $("#2-2").text("O");
+                                }
+                            }
+                            finish2 = true;
+                        }
+                        if (tableau[1][2] === "X") {
+                            tableau[0][2] = "O";
+                            $("#2-0").text("O");
+                            finish3 = true;
+                        }
+                        if (tableau[2][1] === "X") {
+                            tableau[2][0] = "O";
+                            $("#0-2").text("O");
+                            finish4 = true;
+                        }
+                        if (tableau[1][1] === "X") {
+                            tableau[0][2] = "O";
+                            $("#2-0").text("O");
+                        }
+                    }
+                    if (compteurIA > 2 && compteurIA < 9) {
+                        if (victoirePossible("O")) {
+                            tableau[indice][indice1] = "O";
+                            $('#' + indice1 + '-' + indice + '').text("O");
+                        }
+                        else {
+                            if (victoirePossible("X")) {
+                                tableau[indice][indice1] = "O";
+                                $('#' + indice1 + '-' + indice + '').text("O");
+                            }
+                            else {
+                                var coupJoue = false;
+                                if (finish1) {
+                                    tableau[2][2] = "O";
+                                    $("#2-2").text("O");
+                                    finish1 = false;
+                                    coupJoue = true;
+                                }
+                                if (finish2) {
+                                    if (tableau[0][2] === "") {
+                                        tableau[0][2] = "O";
+                                        $("#2-0").text("O");
+                                        coupJoue = true;
+                                    }
+                                    else {
+                                        if (tableau[2][0] === "") {
+                                            tableau[2][0] = "O";
+                                            $("#0-2").text("O");
+                                            coupJoue = true;
+                                        }
+                                        else {
+                                            tableau[2][2] = "O";
+                                            $("#2-2").text("O");
+                                            coupJoue = true;
+                                        }
+                                    }
+                                    finish2 = false;
+                                }
+                                if (finish3) {
+                                    tableau[2][0] = "O";
+                                    $("#0-2").text("O");
+                                    coupJoue = true;
+                                    finish3 = false;
+                                }
+                                if (finish4) {
+                                    tableau[0][2] = "O";
+                                    $("#2-0").text("O");
+                                    coupJoue = true;
+                                    finish4 = false;
+                                }
+                                if (coupJoue === false) {
+                                    for(var i=0; i<3; i++) {
+                                        for(var j=0; j<3; j++) {
+                                            if(tableau[i][j] === "") {
+                                                tableau[i][j] = "O";
+                                                $('#' + j + '-' + i + '').text("O");
+                                                return;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                function victoirePossible(s) {
+                    var i;
+                    for (i = 0; i < 3; i++) {
+                        if (tableau[i][0] === s && tableau[i][1] === s) {
+                            if (tableau[i][2] === "") {
+                                indice = i;
+                                indice1 = 2;
+                                return true;
+                            }
+                        }
+                        if (tableau[i][0] === s && tableau[i][2] === s) {
+                            if (tableau[i][1] === "") {
+                                indice = i;
+                                indice1 = 1;
+                                return true;
+                            }
+                        }
+                        if (tableau[i][1] === s && tableau[i][2] === s) {
+                            if (tableau[i][0] === "") {
+                                indice = i;
+                                indice1 = 0;
+                                return true;
+                            }
+                        }
+
+                        if (tableau[0][i] === s && tableau[1][i] === s) {
+                            if (tableau[2][i] === "") {
+                                indice = 2;
+                                indice1 = i;
+                                return true;
+                            }
+                        }
+                        if (tableau[0][i] === s && tableau[2][i] === s) {
+                            if (tableau[1][i] === "") {
+                                indice = 1;
+                                indice1 = i;
+                                return true;
+                            }
+                        }
+                        if (tableau[1][i] === s && tableau[2][i] === s) {
+                            if (tableau[0][1] === "") {
+                                indice = 0;
+                                indice1 = i;
+                                return true;
+                            }
+                        }
+                    }
+
+                    if (tableau[2][0] === s && tableau[1][1] === s) {
+                        if (tableau[0][2] === "") {
+                            indice = 0;
+                            indice1 = 2;
+                            return true;
+                        }
+                    }
+                    if (tableau[2][0] === s && tableau[0][2] === s) {
+                        if (tableau[1][1] === "") {
+                            indice = 1;
+                            indice1 = 1;
+                            return true;
+                        }
+                    }
+                    if (tableau[1][1] === s && tableau[0][2] === s) {
+                        if (tableau[2][0] === "") {
+                            indice = 2;
+                            indice1 = 0;
+                            return true;
+                        }
+                    }
+                    
+                    return false;
+                }
+
+                //Fin d'une manche qui a gagné
+                function isFinished() {
+                    for (var i = 0; i < 3; i++) {
+                        // On vérifie les lignes
+                        if (tableau[i][0] !== "" && tableau[i][0] === tableau[i][1] && tableau[i][0] === tableau[i][2]) {
+                            vainqueur = tableau[i][0];
+                            return true;
+                        }
+                        
+                        // On vérifie les colonnes
+                        if (tableau[0][i] !== "" && tableau[0][i] === tableau[1][i] && tableau[0][i] === tableau[2][i]) {
+                            vainqueur = tableau[0][i];
+                            return true;
+                        }
+                    }
+                    
+                    // On vérifie les diagonales
+                    if (tableau[1][1] !== "" && ((tableau[1][1] === tableau[0][0] && tableau[1][1] === tableau[2][2]) || (tableau[1][1] === tableau[0][2] && tableau[1][1] === tableau[2][0]))) {
+                        vainqueur = tableau[1][1];
+                        return true;
+                    }
+                    
+                    // On vérifie que la grille n'est pas pleine
+                    return grillePleine();
+                }
+                
+                function grillePleine() {
+                    for (var i = 0; i < 3; i++) {
+                        for (var j = 0; j < 3; j++) {
+                            if (tableau[i][j] === "") {
+                                return false;
+                            }
+                        }
+                    }
+                    
+                    return true;
+                }
+                
+                function randInt(min, max) {
+                    return Math.floor(Math.random() * (max - min) + min);
+                }
+
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <section data-role="page" id="morpion">
+            <div data-role="header" data-position="fixed">
+                <h1>Morpion : le jeu</h1>
+            </div>
+
+            <div data-role="content">
+                <p>Votre score : <span id="scoreJoueur">0</span></p>
+                <p>Score de l'IA : <span id='scoreIA'>0</span></p>
+                <p style="text-align: center;">Bon courage pour battre l'IA !</p>
+                <table id="tableauJS"></table>
+            </div>
+
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+
+    </body>
+</html>

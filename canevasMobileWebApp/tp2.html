@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>ISIC : HTML5</title>
+
+        <link rel="stylesheet" href="support/webmobile7.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="support/jquery.mobile-1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <link rel="stylesheet"  href="css/myStyle.css" />
+
+        <script src="support/jquery-2.1.1.min.js"></script>
+        <script src="js/cookies.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/myScript.js"></script>
+        <script src="support/jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        <style type="text/css">
+            .textstyle
+            {
+                text-align: center;
+                color: green;
+                font-family: cursive;
+                font-size: 25px;
+            }
+            
+            .imgChaton
+            {
+                display: block;
+                margin: 0 auto;
+            }
+            
+            #imgChatonCSS
+            {
+                width: 90%;
+            }
+            
+        </style>
+        
+        <script type="text/javascript">
+            $(document).on('pagecreate', '#exercice2', function() {
+
+                if(width < height) {
+                    $('#imgChatonJS').css('width', width * 90 / 100 + "px");
+                } else {
+                    $('#imgChatonJS').css('height', height * 90 / 100 + "px");
+                }
+                
+            });
+        </script>
+        
+    </head>
+    
+    <body>
+        
+        <section data-role="page">
+            <div data-role="header" data-position="fixed">
+                <h1>TP2</h1>
+            </div>
+            
+            <div data-role="content" class="circleView">
+                <div class="circle" style="background: url('images/icones/exercice.png'); margin-left: 10%">
+                    <a href="#exercice1" data-transition="flow">Exercice 1</a>
+                </div>
+                <div class="circle" style="background: url('images/icones/exercice.png'); margin-left: 60%">
+                    <a href="#exercice2" data-transition="flow" data-ajax="false">Exercice 2</a>
+                </div>
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="exercice1">
+            <div data-role="header" data-position="fixed">
+                <h1>Exercice 1</h1>
+            </div>
+            
+            <div data-role="content">
+                <p class="textstyle">Image redimensionnée en CSS</p>
+                <img src="images/chaton.png" id="imgChatonCSS" class="imgChaton" />
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+        
+        
+        <section data-role="page" id="exercice2">
+            <div data-role="header" data-position="fixed">
+                <h1>Exercice 1</h1>
+            </div>
+            
+            <div data-role="content">
+                <p class="textstyle">Image redimensionnée en Javascript</p>
+                <img src="images/chaton.png" id="imgChatonJS" class="imgChaton" />
+            </div>
+            
+            <div data-role="footer" data-position="fixed"></div>
+        </section>
+        
+    </body>
+</html>
